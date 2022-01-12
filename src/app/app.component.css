@@ -14,9 +14,11 @@ button {
   padding-left: 40px;
   padding-right: 40px;
   display: inline-block;
+  border: none;
   border-radius: 10px;
 }
 
 button:hover {
   background-color: #2681F2;
+  cursor: pointer;
 }

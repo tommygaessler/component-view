@@ -21,16 +21,9 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              {
-                "glob": "**/*",
-                "input": "./node_modules/@zoomus/websdk/dist/lib/",
-                "output": "./node_modules/@zoomus/websdk/dist/lib/"
-              }
+              "src/assets"
             ],
             "styles": [
-              "node_modules/@zoomus/websdk/dist/css/bootstrap.css",
-              "node_modules/@zoomus/websdk/dist/css/react-select.css",
               "src/styles.css"
             ],
             "scripts": [
@@ -47,7 +40,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "baseHref": "/",
+              "baseHref": "/component-view",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
