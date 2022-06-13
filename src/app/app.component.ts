@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
 
   // setup your signature endpoint here: https://github.com/zoom/meetingsdk-sample-signature-node.js
   signatureEndpoint = 'https://meetingsdk-sample-signature.herokuapp.com'
-  sdkKey = 'viodIoBwGbXY8HfsCADKrAIqOgdLuwLNPVUI'
+  sdkKey = ''
   meetingNumber = ''
   role = 0
   userName = 'Zoom Meeting SDK'
@@ -31,31 +31,14 @@ export class AppComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(params => {
       this.meetingNumber = params['meeting'];
       this.passWord = params['passcode'];
+      this.sdkKey = params['key'];
     });
   }
 
   ngOnInit() {
     let meetingSDKElement = document.getElementById('meetingSDKElement');
 
-    this.client.init({
-      debug: true,
-      zoomAppRoot: meetingSDKElement,
-      language: 'en-US',
-      customize: {
-        meetingInfo: ['topic', 'host', 'mn', 'pwd', 'telPwd', 'invite', 'participant', 'dc', 'enctype'],
-        toolbar: {
-          buttons: [
-            {
-              text: 'Custom Button',
-              className: 'CustomButton',
-              onClick: () => {
-                console.log('custom button');
-              }
-            }
-          ]
-        }
-      }
-    });
+    this.client.init({ zoomAppRoot: meetingSDKElement, language: 'en-US' });
   }
 
   getSignature() {

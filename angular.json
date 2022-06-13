@@ -29,7 +29,6 @@
             "scripts": [
             ],
             "allowedCommonJsDependencies": [
-              "@zoomus/websdk"
             ]
           },
           "configurations": {
