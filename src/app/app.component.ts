@@ -13,7 +13,7 @@ import ZoomMtgEmbedded from '@zoomus/websdk/embedded';
 export class AppComponent implements OnInit {
 
   // setup your signature endpoint here: https://github.com/zoom/meetingsdk-sample-signature-node.js
-  signatureEndpoint = 'https://meetingsdk-sample-signature.herokuapp.com'
+  signatureEndpoint = 'https://26040c9x85.execute-api.us-west-1.amazonaws.com/default/meetingsdk'
   sdkKey = ''
   meetingNumber = ''
   role = 0
@@ -42,10 +42,10 @@ export class AppComponent implements OnInit {
   }
 
   getSignature() {
-    this.httpClient.post(this.signatureEndpoint, {
+    this.httpClient.post(this.signatureEndpoint, JSON.stringify({
 	    meetingNumber: this.meetingNumber,
 	    role: this.role
-    }).toPromise().then((data: any) => {
+    })).toPromise().then((data: any) => {
       if(data.signature) {
         this.startMeeting(data.signature)
       } else {
