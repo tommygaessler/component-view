@@ -24,6 +24,7 @@ export class AppComponent implements OnInit {
   // Meetings: https://marketplace.zoom.us/docs/sdk/native-sdks/web/component-view/meetings#join-registered
   // Webinars: https://marketplace.zoom.us/docs/sdk/native-sdks/web/component-view/webinars#join-registered
   registrantToken = ''
+  zakToken = ''
 
   client = ZoomMtgEmbedded.createClient();
 
@@ -65,7 +66,8 @@ export class AppComponent implements OnInit {
     	password: this.passWord,
     	userName: this.userName,
       userEmail: this.userEmail,
-      tk: this.registrantToken
+      tk: this.registrantToken,
+      zak: this.zakToken
     })
   }
 }
