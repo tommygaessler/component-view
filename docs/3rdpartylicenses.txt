@@ -10,7 +10,7 @@ MIT
 @angular/router
 MIT
 
-@zoomus/websdk
+@zoom/meetingsdk
 SEE LICENSE IN LICENSE.md
 
 object-assign

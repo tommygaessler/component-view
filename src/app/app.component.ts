@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { DOCUMENT } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 
-import ZoomMtgEmbedded from '@zoomus/websdk/embedded';
+import ZoomMtgEmbedded from '@zoom/meetingsdk/embedded';
 
 @Component({
   selector: 'app-root',
@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     let meetingSDKElement = document.getElementById('meetingSDKElement');
 
-    this.client.init({ zoomAppRoot: meetingSDKElement, language: 'en-US' });
+    this.client.init({ zoomAppRoot: meetingSDKElement, language: 'en-US', patchJsMedia: true });
   }
 
   getSignature() {
