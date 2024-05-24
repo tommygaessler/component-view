@@ -55,7 +55,7 @@ export class AppComponent implements OnInit {
     let meetingSDKElement = document.getElementById('meetingSDKElement');
 
     this.ngZone.runOutsideAngular(() => {
-      this.client.init({ zoomAppRoot: meetingSDKElement, language: 'en-US', patchJsMedia: true }).then(() => {
+      this.client.init({ zoomAppRoot: meetingSDKElement, language: 'en-US', patchJsMedia: true, leaveOnPageUnload: true }).then(() => {
         this.client.join({
           sdkKey: this.sdkKey,
           signature: signature,
